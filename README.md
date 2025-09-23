@@ -1,3 +1,7 @@
+<img width="296" height="265" alt="image" src="https://github.com/user-attachments/assets/91fa32ac-113b-4608-badc-b7bd687305bc" />
+
+
+
 # 💰 PicPay Simplificado
 
 Uma API REST simplificada do PicPay desenvolvida com Spring Boot para realizar transferências entre usuários e lojistas.

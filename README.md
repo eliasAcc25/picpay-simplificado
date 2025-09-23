@@ -131,35 +131,55 @@ O projeto possui **testes unitários e de integração** abrangentes:
 
 **Cobertura atual**: ~95% das linhas de código
 
-## 🏗️ Arquitetura do Sistema
-
-### 📋 Diagrama Visual
-![Arquitetura Spring Boot](./arquitetura-sistema.drawio.png)
-
-*Diagrama da arquitetura do sistema mostrando o fluxo de dados entre as camadas*
-
-### 🔄 Fluxo de Dados
-1. **👤 Usuário** → Envia requisição HTTP POST
-2. **📡 Controller** → Recebe e valida a requisição  
-3. **💼 Service** → Processa regras de negócio
-4. **🗄️ Repository** → Acessa dados no banco
-5. **💾 Banco H2** → Armazena/consulta informações
-
-### 📁 Estrutura de Pastas
+## 📋 Diagrama Visual
 
 ```
-src/main/java/PicPay/Simplificado/
-├── controller/          # Controladores REST
-├── service/            # Lógica de negócio
-├── repository/         # Acesso a dados
-├── model/
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                            🏗️ ARQUITETURA SPRING BOOT                           │
+│                                 PICPAY SIMPLIFICADO                            │
+└─────────────────────────────────────────────────────────────────────────────────┘
 │   ├── entity/         # Entidades JPA
-│   └── enums/          # Enumerações
-├── dto/                # Objetos de transferência
-└── config/             # Configurações
-```
-
+🔧 TECNOLOGIAS                    📱 FLUXO PRINCIPAL                    ⚡ FUNCIONALIDADES
+┌──────────────────┐             ┌─────────────────────┐                ┌─────────────────────┐
+│ • Java 21        │             │    👤 USUÁRIO       │                │ • Transferir        │
+│ • Spring Boot 3  │             │   (Postman/App)     │                │   dinheiro          │
+│ • JPA            │             └─────────┬───────────┘                │ • Validar usuários  │
+│ • H2 Database    │                       │                            │ • Verificar saldo   │
+│ • Maven          │                       │ 1️⃣ HTTP POST               │ • Salvar transação  │
+└──────────────────┘                       ▼                            │ • Retornar resposta │
+                                 ┌─────────────────────┐                └─────────────────────┘
+📝 EXEMPLO JSON                  │   📡 CONTROLLER     │
+┌──────────────────┐             │   @RestController   │
+│ {                │             │  TransferController │
+│   "senderId": 1, │             └─────────┬───────────┘
+│   "receiverId":2,│                       │
+│   "amount": 100.0│                       │ 2️⃣ Chama Service
+│ }                │                       ▼
+└──────────────────┘             ┌─────────────────────┐
+                                 │    💼 SERVICE       │
+🔄 COMO FUNCIONA                 │     @Service        │
+┌──────────────────┐             │  TransferService    │
+│ 1. Cliente POST  │             └─────────┬───────────┘
+│ 2. Controller    │                       │
+│    recebe        │                       │ 3️⃣ Acessa dados
+│ 3. Service       │                       ▼
+│    processa      │             ┌─────────────────────┐
+│ 4. Repository    │             │   🗄️ REPOSITORY     │
+│    salva         │             │    @Repository      │
+│ 5. Banco         │             │   UserRepository    │
+│    armazena      │             └─────────┬───────────┘
+└──────────────────┘                       │
+                                           │ 4️⃣ SQL Query
+                                           ▼
+                                 ┌─────────────────────┐
+                                 │    💾 BANCO H2      │
+                                 │     Database        │
+                                 │  users, saldos,     │
+                                 │   transferencias    │
+                                 └─────────────────────┘
 ## 🔄 Regras de Negócio
+
+*Diagrama da arquitetura em camadas seguindo o padrão MVC + Repository*
 
 1. **Usuários comuns** podem enviar e receber transferências
 2. **Lojistas** podem apenas receber transferências

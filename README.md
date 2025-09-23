@@ -44,9 +44,9 @@ mvn spring-boot:run
 ### 3. Acesse a aplicação
 - **URL base**: `http://localhost:8080`
 - **Console H2**: `http://localhost:8080/h2-console`
-  - JDBC URL: `jdbc:h2:mem:picpaydb`
-  - Username: `sa`
-  - Password: (vazio)
+    - JDBC URL: `jdbc:h2:mem:picpaydb`
+    - Username: `sa`
+    - Password: (vazio)
 
 ## 📡 Endpoints da API
 
@@ -131,7 +131,21 @@ O projeto possui **testes unitários e de integração** abrangentes:
 
 **Cobertura atual**: ~95% das linhas de código
 
-## 🏗️ Arquitetura
+## 🏗️ Arquitetura do Sistema
+
+### 📋 Diagrama Visual
+![Arquitetura Spring Boot](./arquitetura-sistema.drawio.png)
+
+*Diagrama da arquitetura do sistema mostrando o fluxo de dados entre as camadas*
+
+### 🔄 Fluxo de Dados
+1. **👤 Usuário** → Envia requisição HTTP POST
+2. **📡 Controller** → Recebe e valida a requisição  
+3. **💼 Service** → Processa regras de negócio
+4. **🗄️ Repository** → Acessa dados no banco
+5. **💾 Banco H2** → Armazena/consulta informações
+
+### 📁 Estrutura de Pastas
 
 ```
 src/main/java/PicPay/Simplificado/
@@ -164,14 +178,8 @@ src/main/java/PicPay/Simplificado/
 - ⏳ Autenticação JWT (próxima fase)
 - ⏳ Banco de dados PostgreSQL (próxima fase)
 
-
 ## 👨‍💻 Autor
 
 **Elias Andre Torres**
 - GitHub: [@eliasAcc25](https://github.com/eliasAcc25)
 - LinkedIn: [Elias Andre Torres](https://linkedin.com/in/elias-andre-torres)
-
-
-
-
-

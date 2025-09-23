@@ -32,7 +32,7 @@ Uma API REST simplificada do PicPay desenvolvida com Spring Boot para realizar t
 
 ### 1. Clone o repositório
 ```bash
-git clone https://github.com/seu-usuario/picpay-simplificado.git
+git clone https://github.com/eliasAcc25/picpay-simplificado.git
 cd picpay-simplificado
 ```
 
@@ -179,8 +179,8 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 ## 👨‍💻 Autor
 
 **Elias Andre Torres**
-- GitHub: [@seu-usuario](https://github.com/seu-usuario)
-- Email: seu-email@email.com
+- GitHub: [@eliasAcc25](https://github.com/eliasAcc25)
+- LinkedIn: [Elias Andre Torres](https://linkedin.com/in/elias-andre-torres)
 
 ## 🙏 Agradecimentos
 

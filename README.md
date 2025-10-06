@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<img width="296" height="265" alt="image" src="https://github.com/user-attachments/assets/91fa32ac-113b-4608-badc-b7bd687305bc" />
+
+
+
+>>>>>>> 029311fccfbfe9c08dcd8d4c5a9b3b43f4b6b30c
 # 💰 PicPay Simplificado
 
 Uma API REST simplificada do PicPay desenvolvida com Spring Boot para realizar transferências entre usuários e lojistas.
@@ -131,6 +138,7 @@ O projeto possui **testes unitários e de integração** abrangentes:
 
 **Cobertura atual**: ~95% das linhas de código
 
+<<<<<<< HEAD
 ## 🏗️ Arquitetura
 
 ```
@@ -147,6 +155,58 @@ src/main/java/PicPay/Simplificado/
 
 ## 🔄 Regras de Negócio
 
+=======
+## 📋 Diagrama Visual
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                            🏗️ ARQUITETURA SPRING BOOT                           │
+│                                 PICPAY SIMPLIFICADO                            │
+└─────────────────────────────────────────────────────────────────────────────────┘
+│   ├── entity/         # Entidades JPA
+🔧 TECNOLOGIAS                    📱 FLUXO PRINCIPAL                    ⚡ FUNCIONALIDADES
+┌──────────────────┐             ┌─────────────────────┐                ┌─────────────────────┐
+│ • Java 21        │             │    👤 USUÁRIO       │                │ • Transferir        │
+│ • Spring Boot 3  │             │   (Postman/App)     │                │   dinheiro          │
+│ • JPA            │             └─────────┬───────────┘                │ • Validar usuários  │
+│ • H2 Database    │                       │                            │ • Verificar saldo   │
+│ • Maven          │                       │ 1️⃣ HTTP POST               │ • Salvar transação  │
+└──────────────────┘                       ▼                            │ • Retornar resposta │
+                                 ┌─────────────────────┐                └─────────────────────┘
+📝 EXEMPLO JSON                  │   📡 CONTROLLER     │
+┌──────────────────┐             │   @RestController   │
+│ {                │             │  TransferController │
+│   "senderId": 1, │             └─────────┬───────────┘
+│   "receiverId":2,│                       │
+│   "amount": 100.0│                       │ 2️⃣ Chama Service
+│ }                │                       ▼
+└──────────────────┘             ┌─────────────────────┐
+                                 │    💼 SERVICE       │
+🔄 COMO FUNCIONA                 │     @Service        │
+┌──────────────────┐             │  TransferService    │
+│ 1. Cliente POST  │             └─────────┬───────────┘
+│ 2. Controller    │                       │
+│    recebe        │                       │ 3️⃣ Acessa dados
+│ 3. Service       │                       ▼
+│    processa      │             ┌─────────────────────┐
+│ 4. Repository    │             │   🗄️ REPOSITORY     │
+│    salva         │             │    @Repository      │
+│ 5. Banco         │             │   UserRepository    │
+│    armazena      │             └─────────┬───────────┘
+└──────────────────┘                       │
+                                           │ 4️⃣ SQL Query
+                                           ▼
+                                 ┌─────────────────────┐
+                                 │    💾 BANCO H2      │
+                                 │     Database        │
+                                 │  users, saldos,     │
+                                 │   transferencias    │
+                                 └─────────────────────┘
+## 🔄 Regras de Negócio
+
+*Diagrama da arquitetura em camadas seguindo o padrão MVC + Repository*
+
+>>>>>>> 029311fccfbfe9c08dcd8d4c5a9b3b43f4b6b30c
 1. **Usuários comuns** podem enviar e receber transferências
 2. **Lojistas** podem apenas receber transferências
 3. **Validação de saldo** antes de realizar transferência

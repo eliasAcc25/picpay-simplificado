@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 =======
 <img width="296" height="265" alt="image" src="https://github.com/user-attachments/assets/91fa32ac-113b-4608-badc-b7bd687305bc" />
 

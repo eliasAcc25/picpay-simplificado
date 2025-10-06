@@ -1,9 +1,4 @@
 
-
-<img width="296" height="265" alt="image" src="https://github.com/user-attachments/assets/91fa32ac-113b-4608-badc-b7bd687305bc" />
-
-
-
 # 💰 PicPay Simplificado
 
 Uma API REST simplificada do PicPay desenvolvida com Spring Boot para realizar transferências entre usuários e lojistas.
@@ -219,12 +214,4 @@ src/main/java/PicPay/Simplificado/
 - ✅ Testes unitários e integração
 - ✅ Validações de negócio
 - ✅ Documentação completa
-- ⏳ Deploy em produção (próxima fase)
-- ⏳ Autenticação JWT (próxima fase)
-- ⏳ Banco de dados PostgreSQL (próxima fase)
 
-## 👨‍💻 Autor
-
-**Elias Andre Torres**
-- GitHub: [@eliasAcc25](https://github.com/eliasAcc25)
-- LinkedIn: [Elias Andre Torres](https://linkedin.com/in/elias-andre-torres)
